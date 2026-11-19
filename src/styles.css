@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: oklch(1 0 0);
+
+  --color-mint: var(--mint);
+  --color-sky: var(--sky);
+  --color-lavender: var(--lavender);
+  --color-peach: var(--peach);
+  --color-rose: var(--rose);
+  --color-gold: var(--gold);
+  --color-amber: var(--gold);
+  --color-safari-blue: oklch(0.42 0.18 252);
+
+  --color-accent: var(--mint);
+  --color-accent-foreground: oklch(0.12 0 0);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --shadow-soft: 0 10px 40px -12px oklch(0 0 0 / 0.18);
+  --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.28);
+  --shadow-glass: 0 8px 32px oklch(0 0 0 / 0.12), inset 0 1px 0 oklch(1 0 0 / 0.6);
+  --shadow-hero-photo: 0 24px 60px -18px oklch(0 0 0 / 0.28);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 28s linear infinite;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Warm ivory parchment base — soft safari editorial feel */
+  --background: oklch(0.978 0.014 150); /* soft green-ivory safari tone */
+  --foreground: oklch(0.24 0.045 165); /* deep forest green-charcoal */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.045 165);
+  --primary: oklch(0.42 0.105 165); /* deep safari forest green */
+  --primary-foreground: oklch(0.98 0.01 95);
+  --secondary: oklch(0.94 0.035 150); /* soft sage */
+  --secondary-foreground: oklch(0.24 0.045 165);
+  --muted: oklch(0.925 0.025 150);
+  --muted-foreground: oklch(0.48 0.03 160);
+  --border: oklch(0.875 0.025 150);
+  --input: oklch(0.875 0.025 150);
+  --ring: oklch(0.42 0.105 165);
+
+  --whatsapp: oklch(0.68 0.17 152);
+
+  /* refined safari palette: emerald / gold / dusk */
+  --lavender: oklch(0.80 0.09 290);
+  --peach: oklch(0.86 0.09 60);
+  --mint: oklch(0.66 0.13 160);   /* deep emerald — readable on light bg */
+  --sky: oklch(0.62 0.12 235);    /* dusk blue */
+  --rose: oklch(0.80 0.09 15);
+  --gold: oklch(0.78 0.14 80);    /* savanna gold accent */
+
+  --shadow-soft: 0 10px 40px -12px oklch(0.24 0.045 165 / 0.16);
+  --shadow-elegant: 0 24px 60px -16px oklch(0.24 0.045 165 / 0.24);
+  --shadow-glass: 0 8px 32px oklch(0.24 0.045 165 / 0.10), inset 0 1px 0 oklch(1 0 0 / 0.8);
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+}
+
+.dark {
+  --background: oklch(0.17 0.035 170);
+  --foreground: oklch(0.96 0.015 95);
+  --card: oklch(0.21 0.035 170);
+  --card-foreground: oklch(0.96 0.015 95);
+  --primary: oklch(0.80 0.12 160);
+  --primary-foreground: oklch(0.17 0.035 170);
+  --secondary: oklch(0.25 0.035 170);
+  --secondary-foreground: oklch(0.96 0.015 95);
+  --muted: oklch(0.26 0.03 170);
+  --muted-foreground: oklch(0.70 0.03 150);
+  --border: oklch(0.30 0.03 170);
+  --input: oklch(0.30 0.03 170);
+  --ring: oklch(0.80 0.12 160);
+
+  --shadow-soft: 0 10px 40px -12px oklch(0 0 0 / 0.5);
+  --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.7);
+  --shadow-glass: 0 8px 32px oklch(0 0 0 / 0.4), inset 0 1px 0 oklch(1 0 0 / 0.12);
+}
+
+/* Base Typography: Nunito display & body font */
+html, body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: Nunito weight 800-900 (extrabold/black), tight leading */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+/* Eyebrows: section labels */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* Glass Panels */
+.glass {
+  background-color: color-mix(in oklab, var(--background) 88%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid color-mix(in oklab, var(--foreground) 12%, transparent);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-dark {
+  background-color: oklch(0.18 0.03 260 / 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid oklch(1 0 0 / 0.12);
+  box-shadow: 0 8px 32px oklch(0 0 0 / 0.35);
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-marquee,
+  .animate-float-slow,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}
+
+/* Animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Subtle Glow Orbs */
+.orb-glow {
+  filter: blur(54px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--foreground) 20%, transparent);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--foreground) 35%, transparent);
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imbuto-safaris.rw/sitemap.xml
